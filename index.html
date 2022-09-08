@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>JS Validacija Forme</title>
+</head>
+
+<body>
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="col-md-8">
+            <h3 class="my-5">Popunite formu</h3>
+            <form id="form">
+
+                <div class="col-md-4 input-control">
+                    <label for="firsrName">Ime</label>
+                    <div>
+                        <input type="text" id="firstName" name="firstName" placeholder="Pera" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '').replace(/(\..*)\./g, '$1');" required />
+                        <div class="error"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 input-control">
+                    <label for="surName">Prezime</label>
+                    <div>
+                        <input type="text" id="surName" name="surName" placeholder="Peric" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '').replace(/(\..*)\./g, '$1');" required />
+                        <div class="error"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 input-control">
+                    <label for="date">Datum rodjenja</label>
+                    <div>
+                        <input type="date" id="date" name="date" required />
+                        <div class="error"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 input-control">
+                    <label for="address">Adresa</label>
+                    <div>
+                        <input type="text" name="addres" id="address" required />
+                        <div class="error"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 input-control">
+                    <label for="city">Grad</label>
+                    <div>
+                        <select id="city" required>
+                <option selected disabled value="">Izabrati</option>
+                <option value="1">Beograd</option>
+                <option value="2">Novi Sad</option>
+                <option value="3">Kragujevac</option>
+                <option value="4">Subotica</option>
+              </select>
+                        <div class="error"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 input-control">
+                    <label for="zipCode">Postanski broj</label>
+                    <div>
+                        <input type="text" name="zipCode" id="zipCode" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" required />
+                        <div class="error"></div>
+                    </div>
+                </div>
+
+                <div class="col-12 input-control">
+                    <label for="gender">Pol</label>
+                    <div>
+                        <input class="form-check-input" value="muski" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                 Muski
+               </label>
+                    </div>
+                    <div>
+                        <input class="form-check-input" value="zenski" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                   Zenski
+                  </label>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-3">
+                    <button class="btn btn-primary" type="submit">Posalji</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <script src="js/bootstrap.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2.4.0/dist/umd/popper.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
